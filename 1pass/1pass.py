@@ -55,7 +55,6 @@ def load_vault(fernet):
         return {}
     with open(VAULT_FILE, "rb") as f:
         encrypted_data = f.read()
-    os.system(f'attrib +h "{VAULT_FILE}"')
     if not encrypted_data:
         return {}
     try:
@@ -128,7 +127,7 @@ def main():
     #uses getpass to safely get user password without showing what's typed on the screen
     master_password = getpass.getpass("Enter master password: ")
     fernet = get_fernet(master_password)
-    
+
     if command == "add":
         if not account_name:
             print("Please provide an account name.")

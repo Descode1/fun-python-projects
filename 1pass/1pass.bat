@@ -1,2 +1,4 @@
 @echo off
-py "C:\Users\sugir\fun-python-projects\1pass\1pass.py" %*
+pushd %~dp0
+py "%~dp01pass.py" %*
+popd
